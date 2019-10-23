@@ -28,6 +28,7 @@ public class UserServiceImpl implements UserService {
         LOGGER.info(" \n 分页查询用户："
                 + " PageNumber = " + pageable.getPageNumber()
                 + " PageSize = " + pageable.getPageSize());
+
         return userRepository.findAll(pageable);
     }
 

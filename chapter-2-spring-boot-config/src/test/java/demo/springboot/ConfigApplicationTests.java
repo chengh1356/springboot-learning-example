@@ -21,6 +21,7 @@ public class ConfigApplicationTests {
 
 	@Test
 	public void testBookProperties() {
+		System.out.println("start!");
 		Assert.assertEquals(bookProperties.getName(),"[Spring Boot 2.x Core Action]");
 		Assert.assertEquals(bookProperties.getWriter(),"BYSocket");
 	}

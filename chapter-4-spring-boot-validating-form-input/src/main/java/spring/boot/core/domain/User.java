@@ -30,7 +30,7 @@ public class User implements Serializable {
      * 名称
      */
     @NotEmpty(message = "姓名不能为空")
-    @Size(min = 2, max = 8, message = "姓名长度必须大于 2 且小于 20 字")
+    @Size(min = 2, max = 20, message = "姓名长度必须大于 2 且小于 20 字")
     private String name;
 
     /**
