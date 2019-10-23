@@ -3,3 +3,12 @@ demo:
     book:
         name: 《Spring Boot 2.x 核心技术实战 - 上 基础篇》
         writer: 泥瓦匠BYSocket
+#url：http://localhost:8080/swagger-ui.html
+swagger:
+  enabled: true   #非必需，默认false
+  base-package: demo.springboot.web
+  description: swagger 1.5.1版本
+  contact:
+    name: cgh
+    emial: 540458161@qq.com
+  title: API查看
