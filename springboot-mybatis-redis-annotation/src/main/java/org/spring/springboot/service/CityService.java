@@ -29,4 +29,6 @@ public interface CityService {
      */
     void updateCityDescription(String cityName, String description);
 
+    boolean deleteCity(City city);
+
 }
