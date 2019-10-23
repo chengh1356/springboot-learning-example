@@ -38,7 +38,7 @@ public class CityServiceImpl implements CityService {
     
     public void saveOrUpdate() {
         List<Mutation> saveOrUpdates = new ArrayList<Mutation>();
-        Put            put           = new Put(Bytes.toBytes("135xxxxxx"));
+        Put  put = new Put(Bytes.toBytes("135xxxxxx"));
         put.addColumn(Bytes.toBytes("people"), Bytes.toBytes("name"), Bytes.toBytes("test"));
         saveOrUpdates.add(put);
         
