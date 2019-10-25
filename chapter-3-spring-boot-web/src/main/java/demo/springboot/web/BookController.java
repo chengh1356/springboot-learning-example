@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * Book 控制层
- *
+ * <p>
  * Created by bysocket on 27/09/2017.
  */
 @RestController
@@ -57,7 +57,7 @@ public class BookController {
 
         LOG.info("creating new book: {}", book);
 
-        if (book.getName().equals("conflict")){
+        if (book.getName().equals("conflict")) {
             LOG.info("a book with name " + book.getName() + " already exists");
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }

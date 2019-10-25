@@ -14,17 +14,17 @@ public class GroovyScriptController {
 
     @RequestMapping(value = "/filter", method = RequestMethod.GET)
     public String filter() {
-        
+
         RouteRuleFilter routeRuleFilter = new RouteRuleFilter();
-    
+
         Map<String, Object> input = new HashMap<>();
         input.put("field", "seller");
-    
+
         Map<String, Object> output = routeRuleFilter.filter(input);
         return "true";
-        
+
     }
-    
+
     public static void main(String[] args) {
         GroovyScriptController groovyScriptController = new GroovyScriptController();
         groovyScriptController.filter();

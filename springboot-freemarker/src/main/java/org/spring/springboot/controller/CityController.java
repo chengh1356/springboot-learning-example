@@ -29,7 +29,7 @@ public class CityController {
     @RequestMapping(value = "/api/city", method = RequestMethod.GET)
     public String findAllCity(Model model) {
         List<City> cityList = cityService.findAllCity();
-        model.addAttribute("cityList",cityList);
+        model.addAttribute("cityList", cityList);
         return "cityList";
     }
 }

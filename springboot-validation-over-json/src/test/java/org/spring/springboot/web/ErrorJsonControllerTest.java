@@ -4,7 +4,7 @@ import org.junit.Test;
 
 /**
  * Spring Boot ErrorJsonController 测试 - {@link ErrorJsonController}
- *
+ * <p>
  * Created by bysocket on 16/4/26.
  */
 public class ErrorJsonControllerTest {

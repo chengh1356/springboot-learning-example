@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * Book 控制层
- *
+ * <p>
  * Created by bysocket on 30/09/2017.
  */
 @Controller
@@ -29,7 +29,7 @@ public class BookController {
      */
     @RequestMapping(method = RequestMethod.GET)
     public String getBookList(ModelMap map) {
-        map.addAttribute("bookList",bookService.findAll());
+        map.addAttribute("bookList", bookService.findAll());
         return BOOK_LIST_PATH_NAME;
     }
 
@@ -56,8 +56,8 @@ public class BookController {
 
     /**
      * 获取更新 Book 表单
-     *    处理 "/book/update/{id}" 的 GET 请求，通过 URL 中的 id 值获取 Book 信息
-     *    URL 中的 id ，通过 @PathVariable 绑定参数
+     * 处理 "/book/update/{id}" 的 GET 请求，通过 URL 中的 id 值获取 Book 信息
+     * URL 中的 id ，通过 @PathVariable 绑定参数
      */
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
     public String getUser(@PathVariable Long id, ModelMap map) {

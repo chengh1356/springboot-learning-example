@@ -15,7 +15,7 @@ public class CityRowMapper implements RowMapper<City> {
     public City mapRow(Result result, int rowNum) throws Exception {
         String name = Bytes.toString(result.getValue(COLUMN_FAMILY, NAME));
         int age = Bytes.toInt(result.getValue(COLUMN_FAMILY, AGE));
-    
+
         City dto = new City();
         dto.setCityName(name);
         dto.setAge(age);

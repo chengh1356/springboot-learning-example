@@ -102,7 +102,7 @@ public class UserControllerTest {
     @Test
     public void getUser() throws Exception {
 
-        MvcResult result= mockMvc.perform(get("/users/update/{id}/", 1))
+        MvcResult result = mockMvc.perform(get("/users/update/{id}/", 1))
                 .andExpect(status().isOk())
                 .andExpect(view().name("userForm"))
                 .andExpect(MockMvcResultMatchers.model().attributeExists("action"))
@@ -113,14 +113,14 @@ public class UserControllerTest {
                 .andReturn();
 
 
-        MockHttpServletResponse mockResponse=result.getResponse();
+        MockHttpServletResponse mockResponse = result.getResponse();
         assertThat(mockResponse.getContentType()).isEqualTo("text/html;charset=UTF-8");
 
         Collection<String> responseHeaders = mockResponse.getHeaderNames();
         assertNotNull(responseHeaders);
         assertEquals(2, responseHeaders.size());
         assertEquals("Check for Content-Type header", "Accept-Language", responseHeaders.iterator().next());
-        String responseAsString=mockResponse.getContentAsString();
+        String responseAsString = mockResponse.getContentAsString();
         assertTrue(responseAsString.contains("用户管理"));
     }
 
@@ -145,7 +145,7 @@ public class UserControllerTest {
 
     @Test
     public void deleteUser() throws Exception {
-        mockMvc.perform( MockMvcRequestBuilders.delete("/users/delete/{id}", 1L) )
+        mockMvc.perform(MockMvcRequestBuilders.delete("/users/delete/{id}", 1L))
                 .andDo(print())
                 .andExpect(status().is(HttpServletResponse.SC_FOUND))
                 .andExpect(view().name("redirect:/users/"));

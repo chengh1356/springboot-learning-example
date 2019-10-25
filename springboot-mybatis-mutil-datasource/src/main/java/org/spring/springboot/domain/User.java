@@ -2,7 +2,7 @@ package org.spring.springboot.domain;
 
 /**
  * 用户实体类
- *
+ * <p>
  * Created by bysocket on 07/02/2017.
  */
 public class User {

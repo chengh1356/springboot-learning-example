@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Spring Boot 应用启动类
- *
+ * <p>
  * Created by bysocket on 26/09/2017.
  */
 @EnableSwagger2Doc // 开启 Swagger

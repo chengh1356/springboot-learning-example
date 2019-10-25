@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 书属性
- *
+ * <p>
  * Created by bysocket on 27/09/2017.
  */
 @Component

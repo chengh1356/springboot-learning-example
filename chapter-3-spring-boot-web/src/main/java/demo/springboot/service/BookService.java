@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Book 业务接口层
- *
+ * <p>
  * Created by bysocket on 27/09/2017.
  */
 public interface BookService {
@@ -45,6 +45,7 @@ public interface BookService {
 
     /**
      * 查找书是否存在
+     *
      * @param book
      * @return
      */
@@ -52,6 +53,7 @@ public interface BookService {
 
     /**
      * 根据书名获取书籍
+     *
      * @param name
      * @return
      */

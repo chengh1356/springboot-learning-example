@@ -86,7 +86,8 @@ public class User implements Serializable {
         this.birthday = birthday;
     }
 
-    public User() {}
+    public User() {
+    }
 
     @Override
     public String toString() {

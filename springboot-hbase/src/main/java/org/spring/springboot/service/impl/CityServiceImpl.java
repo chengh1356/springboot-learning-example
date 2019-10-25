@@ -21,27 +21,28 @@ import java.util.List;
  */
 @Service
 public class CityServiceImpl implements CityService {
-    
-    @Autowired private HbaseTemplate hbaseTemplate;
-    
+
+    @Autowired
+    private HbaseTemplate hbaseTemplate;
+
     public List<City> query(String startRow, String stopRow) {
         Scan scan = new Scan(Bytes.toBytes(startRow), Bytes.toBytes(stopRow));
         scan.setCaching(5000);
         List<City> dtos = this.hbaseTemplate.find("people_table", scan, new CityRowMapper());
         return dtos;
     }
-    
+
     public City query(String row) {
         City dto = this.hbaseTemplate.get("people_table", row, new CityRowMapper());
         return dto;
     }
-    
+
     public void saveOrUpdate() {
         List<Mutation> saveOrUpdates = new ArrayList<Mutation>();
-        Put  put = new Put(Bytes.toBytes("135xxxxxx"));
+        Put put = new Put(Bytes.toBytes("135xxxxxx"));
         put.addColumn(Bytes.toBytes("people"), Bytes.toBytes("name"), Bytes.toBytes("test"));
         saveOrUpdates.add(put);
-        
+
         this.hbaseTemplate.saveOrUpdates("people_table", saveOrUpdates);
     }
 }

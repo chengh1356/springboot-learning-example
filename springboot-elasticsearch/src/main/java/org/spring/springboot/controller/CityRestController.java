@@ -27,6 +27,6 @@ public class CityRestController {
     public List<City> searchCity(@RequestParam(value = "pageNumber") Integer pageNumber,
                                  @RequestParam(value = "pageSize", required = false) Integer pageSize,
                                  @RequestParam(value = "searchContent") String searchContent) {
-        return cityService.searchCity(pageNumber,pageSize,searchContent);
+        return cityService.searchCity(pageNumber, pageSize, searchContent);
     }
 }

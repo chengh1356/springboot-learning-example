@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Spring Boot 应用启动类
- *
+ * <p>
  * Created by bysocket on 30/09/2017.
  */
 @SpringBootApplication

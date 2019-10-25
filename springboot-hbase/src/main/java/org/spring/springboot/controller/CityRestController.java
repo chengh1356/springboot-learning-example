@@ -23,7 +23,7 @@ public class CityRestController {
         city.setAge(1);
         return city;
     }
-    
+
     @RequestMapping(value = "/api/city/get", method = RequestMethod.GET)
     public City getCity() {
         return cityService.query("135xxxxxx");

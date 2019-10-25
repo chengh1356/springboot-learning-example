@@ -6,7 +6,7 @@ import org.spring.springboot.domain.User;
 
 /**
  * 用户 DAO 接口类
- *
+ * <p>
  * Created by bysocket on 07/02/2017.
  */
 @Mapper

@@ -10,10 +10,10 @@ import java.util.List;
  * Created by bysocket on 07/02/2017.
  */
 public interface CityService {
-    
+
     List<City> query(String startRow, String stopRow);
-    
+
     public City query(String row);
-    
+
     void saveOrUpdate();
 }

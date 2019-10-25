@@ -7,7 +7,6 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Spring Boot MessageConfiguration 测试 - {@link MessageConfiguration}
- *
  */
 public class MessageConfigurationTest {
 

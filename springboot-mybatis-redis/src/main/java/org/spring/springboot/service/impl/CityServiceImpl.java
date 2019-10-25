@@ -6,6 +6,9 @@ import org.spring.springboot.dao.CityDao;
 import org.spring.springboot.domain.City;
 import org.spring.springboot.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
@@ -35,6 +38,7 @@ public class CityServiceImpl implements CityService {
      * 如果缓存存在，从缓存中获取城市信息
      * 如果缓存不存在，从 DB 中获取城市信息，然后插入缓存
      */
+    @Cacheable(value = "city", key = "'city'+#id")
     public City findCityById(Long id) {
         // 从缓存中获取城市信息
         String key = "city_" + id;
@@ -60,6 +64,7 @@ public class CityServiceImpl implements CityService {
     }
 
     @Override
+    @Cacheable(value = "city", key = "'city_'+#city.id")
     public Long saveCity(City city) {
         return cityDao.saveCity(city);
     }
@@ -70,6 +75,7 @@ public class CityServiceImpl implements CityService {
      * 如果缓存不存在，不操作
      */
     @Override
+    @CachePut(value = "city", key = "'city_'+#city.id")
     public Long updateCity(City city) {
         Long ret = cityDao.updateCity(city);
 
@@ -86,10 +92,9 @@ public class CityServiceImpl implements CityService {
     }
 
     @Override
+    @CacheEvict(key = "'city_'+#id")
     public Long deleteCity(Long id) {
-
         Long ret = cityDao.deleteCity(id);
-
         // 缓存存在，删除缓存
         String key = "city_" + id;
         boolean hasKey = redisTemplate.hasKey(key);
